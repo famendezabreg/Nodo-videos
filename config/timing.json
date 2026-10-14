@@ -1,0 +1,435 @@
+{
+  "_doc": "Fuente unica de tiempos del reel NODO 624 'impacto'. Todo se expresa en BEATS; remotion-reel/src/config.ts y hf-titles/tools/gen.py lo leen. Sin musica en /assets/audio => rejilla fija de 100 BPM (0.6 s).",
+  "fps": 30,
+  "bpm": 100,
+  "grid": "fixed-100bpm",
+  "scenes": {
+    "hook": [
+      0,
+      3
+    ],
+    "s1": [
+      3,
+      7
+    ],
+    "s2": [
+      7,
+      11
+    ],
+    "s3": [
+      11,
+      15
+    ],
+    "s4": [
+      15,
+      19
+    ],
+    "s5": [
+      19,
+      23
+    ],
+    "s6": [
+      23,
+      28
+    ],
+    "end": [
+      28,
+      33
+    ]
+  },
+  "photos": {
+    "fachada": {
+      "file": "recibido_15_fachada-frontal-nodo624.png",
+      "w": 2560,
+      "h": 1440
+    },
+    "fachada4": {
+      "file": "recibido_22_entrada-planter.png",
+      "w": 2560,
+      "h": 1440
+    },
+    "recepcion": {
+      "file": "recibido_18_recepcion.png",
+      "w": 1448,
+      "h": 1086
+    },
+    "lounge": {
+      "file": "recibido_20_lounge-sofa-muro-verde.png",
+      "w": 1448,
+      "h": 1086
+    },
+    "vestibulo": {
+      "file": "recibido_10_vestibulo-escalera.png",
+      "w": 1495,
+      "h": 1052
+    },
+    "escalera": {
+      "file": "recibido_17_escalera.png",
+      "w": 1490,
+      "h": 1056
+    },
+    "oficina": {
+      "file": "recibido_01_oficina-jardin.png",
+      "w": 2304,
+      "h": 1536
+    },
+    "sala": {
+      "file": "recibido_08_sala-reuniones-b.png",
+      "w": 2304,
+      "h": 1536
+    },
+    "comedor": {
+      "file": "recibido_12_comedor-arcos.jpg",
+      "w": 1494,
+      "h": 1053
+    },
+    "cafeteria": {
+      "file": "recibido_13_cocineta-barra.jpg",
+      "w": 1493,
+      "h": 1053
+    },
+    "terraza": {
+      "file": "recibido_14_terraza-pergola.png",
+      "w": 1536,
+      "h": 1024
+    },
+    "patio": {
+      "file": "recibido_06_fachada-posterior-arcos.png",
+      "w": 2304,
+      "h": 1536
+    },
+    "fachada2": {
+      "file": "recibido_16_fachada-angulo-nodo624.png",
+      "w": 2560,
+      "h": 1440
+    }
+  },
+  "depth": {
+    "fachada": "fachada",
+    "lounge": "lounge",
+    "patio": "patio",
+    "fachada2": "fachada2"
+  },
+  "hook": {
+    "letters": {
+      "N": 0,
+      "O1": 0.5,
+      "D": 1.0,
+      "O2": 1.5
+    },
+    "digits": 1.75,
+    "fillAt": 1.75,
+    "zoom": [
+      2.6,
+      3.0
+    ],
+    "photo": {
+      "from": {
+        "x": 0.6,
+        "y": 0.3
+      },
+      "to": {
+        "x": 0.805,
+        "y": 0.5
+      },
+      "zoom": [
+        1.55,
+        1.04
+      ]
+    }
+  },
+  "s1": {
+    "photo": "fachada",
+    "parallax": {
+      "from": {
+        "x": 0.805,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.825,
+        "y": 0.5
+      },
+      "zoom": [
+        1.04,
+        1.15
+      ],
+      "shift": 0.028
+    }
+  },
+  "s2": {
+    "strips": [
+      "fachada4",
+      "lounge",
+      "recepcion"
+    ],
+    "stripIn": [
+      0,
+      1.2
+    ],
+    "expandAt": 2.0,
+    "expandDur": 0.8,
+    "hero": {
+      "photo": "lounge",
+      "from": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.56,
+        "y": 0.5
+      },
+      "zoom": [
+        1.06,
+        1.16
+      ],
+      "shift": 0.026
+    },
+    "focus": {
+      "fachada4": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "lounge": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "recepcion": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "slide": {
+      "fachada4": {
+        "dir": -1,
+        "dur": 1.0
+      },
+      "lounge": {
+        "dir": 1,
+        "dur": 1.3
+      },
+      "recepcion": {
+        "dir": -1,
+        "dur": 1.15
+      }
+    }
+  },
+  "s3": {
+    "photo": "vestibulo",
+    "door": {
+      "x0": 0.254,
+      "x1": 0.307,
+      "y0": 0.265,
+      "y1": 0.8
+    },
+    "openAt": 0,
+    "openDur": 1.0,
+    "focus": {
+      "from": {
+        "x": 0.3,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.36,
+        "y": 0.5
+      }
+    },
+    "zoom": [
+      1.04,
+      1.14
+    ]
+  },
+  "s4": {
+    "top": "escalera",
+    "bottom": "oficina",
+    "expandAt": 2.0,
+    "expandDur": 0.7,
+    "topFocus": {
+      "from": {
+        "x": 0.42,
+        "y": 0.68
+      },
+      "to": {
+        "x": 0.42,
+        "y": 0.32
+      },
+      "zoom": 1.3
+    },
+    "bottomFocus": {
+      "from": {
+        "x": 0.62,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.4,
+        "y": 0.5
+      },
+      "zoom": [
+        1.08,
+        1.2
+      ]
+    },
+    "slideDur": 0.6
+  },
+  "s5": {
+    "photo": "sala",
+    "openDur": 1.0,
+    "focus": {
+      "from": {
+        "x": 0.36,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "zoom": [
+      1.04,
+      1.18
+    ]
+  },
+  "s6": {
+    "burst": [
+      {
+        "photo": "comedor",
+        "at": 0,
+        "from": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "to": {
+          "x": 0.46,
+          "y": 0.5
+        }
+      },
+      {
+        "photo": "cafeteria",
+        "at": 1,
+        "from": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      {
+        "photo": "terraza",
+        "at": 2,
+        "from": {
+          "x": 0.4,
+          "y": 0.5
+        },
+        "to": {
+          "x": 0.46,
+          "y": 0.5
+        }
+      }
+    ],
+    "patio": {
+      "at": 3,
+      "photo": "patio",
+      "from": {
+        "x": 0.42,
+        "y": 0.55
+      },
+      "to": {
+        "x": 0.52,
+        "y": 0.55
+      },
+      "zoom": [
+        1.04,
+        1.12
+      ],
+      "shift": 0.026
+    },
+    "whip": {
+      "dur": 0.4,
+      "lead": 0.15
+    },
+    "punch": [
+      1.3,
+      1.0
+    ],
+    "punchDur": 0.5
+  },
+  "end": {
+    "photo": "fachada2",
+    "parallax": {
+      "from": {
+        "x": 0.6,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.56,
+        "y": 0.5
+      },
+      "zoom": [
+        1.14,
+        1.2
+      ],
+      "shift": 0.012
+    }
+  },
+  "leaks": [
+    {
+      "at": 8.6,
+      "dur": 1.6
+    },
+    {
+      "at": 19.0,
+      "dur": 1.4
+    },
+    {
+      "at": 26.0,
+      "dur": 1.8
+    }
+  ],
+  "text": {
+    "s1": {
+      "eyebrowAt": 0.5,
+      "wordsAt": 1.0,
+      "step": 0.25,
+      "outAt": 3.5
+    },
+    "s2": {
+      "wordsAt": 1.0,
+      "step": 0.25,
+      "outAt": 3.5
+    },
+    "s3": {
+      "phrase1At": 1.0,
+      "phrase2At": 2.0,
+      "step": 0.25,
+      "outAt": 3.5,
+      "p1OutAt": 1.7
+    },
+    "s4": {
+      "wordsAt": 2.0,
+      "step": 0.15,
+      "outAt": 3.5
+    },
+    "s5": {
+      "wordsAt": 1.0,
+      "step": 0.2,
+      "outAt": 3.5
+    },
+    "s6": {
+      "wordsAt": 3.0,
+      "step": 0.25,
+      "outAt": 4.6
+    },
+    "end": {
+      "logoAt": 0.0,
+      "wordsAt": [
+        1.0,
+        1.5,
+        2.0
+      ],
+      "buttonAt": 3.0,
+      "shineAt": 3.5,
+      "footerAt": 3.6
+    }
+  }
+}

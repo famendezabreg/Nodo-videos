@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+@font-face{font-family:"Lora";src:url("assets/fonts/Lora.woff2") format("woff2");font-weight:400 700;font-style:normal}
+@font-face{font-family:"Lora";src:url("assets/fonts/Lora-Italic.woff2") format("woff2");font-weight:400 700;font-style:italic}
+@font-face{font-family:"Work Sans";src:url("assets/fonts/WorkSans.woff2") format("woff2");font-weight:400 600;font-style:normal}
+:root{--bg:#1B1815;--text:#F7F2EA;--accent:#EBB593;--eyebrow:#E8C3A4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
+#root{position:relative;width:100%;height:100%;color:var(--text);font-family:"Lora",serif}
+.eyebrow{font-family:"Work Sans",sans-serif;font-weight:600;font-size:28px;letter-spacing:.3em;text-transform:uppercase;color:var(--eyebrow);white-space:nowrap}
+.rule{height:2px;background:var(--accent);transform-origin:left center}
+h1,.h{font-family:"Lora",serif;font-weight:500;color:var(--text);text-shadow:0 2px 24px rgba(27,24,21,.55)}
+h1 .l{display:block}
+em{font-style:italic;color:var(--accent);font-weight:500}
+.small{font-family:"Work Sans",sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--eyebrow);font-size:22px;white-space:nowrap}
+
+#stack{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0}
+#eb{margin-bottom:46px}
+#logo{width:640px;height:auto;display:block}
+#rule{width:120px;margin:46px 0 30px}
+#sub{font-size:24px}
+</style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="intro" data-start="0" data-duration="1.6" data-width="1080" data-height="1920" data-fps="30">
+
+      <div id="stack" class="clip" data-start="0" data-duration="1.6" data-track-index="0">
+        <div id="eb" class="eyebrow">Un recorrido por</div>
+        <img id="logo" src="assets/logo.png" alt="NODO 624" />
+        <div id="rule" class="rule"></div>
+        <div id="sub" class="small">Colonia Escalón · San Salvador</div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const IN = { duration: 0.9, ease: "power3.out" };
+      const rise = (sel, at, y = 40) => tl.fromTo(sel, { y, opacity: 0 }, { y: 0, opacity: 1, ...IN }, at);
+
+      rise("#eb", 0.05, 24);
+      tl.fromTo("#logo", { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.3);
+      tl.fromTo("#rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, 0.7);
+      tl.fromTo("#sub", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.85);
+      tl.to("#stack", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 1.2);
+
+      window.__timelines["intro"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
