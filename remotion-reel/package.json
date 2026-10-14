@@ -1,24 +1,29 @@
 {
-  "name": "nodo624-reel",
-  "version": "1.0.0",
+  "name": "nodo624-reel-impacto",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "assets": "node scripts/sync-assets.mjs",
     "studio": "remotion studio",
-    "stills": "node scripts/stills.mjs",
+    "contact": "node scripts/contact.mjs",
     "render": "node scripts/render.mjs"
   },
   "dependencies": {
+    "@react-three/fiber": "9.8.1",
     "@remotion/cli": "4.0.535",
     "@remotion/google-fonts": "4.0.535",
     "@remotion/media-utils": "4.0.535",
+    "@remotion/motion-blur": "4.0.535",
+    "@remotion/three": "4.0.535",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "remotion": "4.0.535"
+    "remotion": "4.0.535",
+    "three": "0.170.0"
   },
   "devDependencies": {
     "@types/react": "^19.3.0",
+    "@types/three": "^0.170.0",
     "typescript": "^7.0.2"
   }
 }

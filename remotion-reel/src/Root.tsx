@@ -3,10 +3,10 @@ import { Composition, getRemotionEnvironment } from "remotion";
 import { loadFont as loadLora } from "@remotion/google-fonts/Lora";
 import { loadFont as loadWorkSans } from "@remotion/google-fonts/WorkSans";
 import { Reel, ReelProps } from "./Reel";
-import { FPS, H, TOTAL_S, W } from "./timeline";
+import { FPS, H, TOTAL_FRAMES, W } from "./config";
 
-// Tipografias de marca. Los titulares animados viven en las capas de HyperFrames (con las mismas fuentes embebidas);
-// en Studio se cargan desde Google Fonts para cualquier texto nativo. En render offline se omiten (no se usan).
+// La tipografia animada vive en las capas de HyperFrames (con Lora/Work Sans embebidas). En Studio se cargan
+// desde Google Fonts para cualquier texto nativo; en el render sin red se omiten (no se usan).
 if (getRemotionEnvironment().isStudio) {
   loadLora("normal", { weights: ["500"], subsets: ["latin"] });
   loadLora("italic", { weights: ["500"], subsets: ["latin"] });
@@ -14,13 +14,6 @@ if (getRemotionEnvironment().isStudio) {
 }
 
 export const Root: React.FC = () => (
-  <Composition
-    id="Reel"
-    component={Reel}
-    durationInFrames={Math.round(TOTAL_S * FPS)}
-    fps={FPS}
-    width={W}
-    height={H}
-    defaultProps={{ audioFile: null } as ReelProps}
-  />
+  <Composition id="Reel" component={Reel} durationInFrames={TOTAL_FRAMES} fps={FPS} width={W} height={H}
+    defaultProps={{ music: null, sfx: [] } as ReelProps} />
 );

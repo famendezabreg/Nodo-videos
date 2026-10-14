@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="../assets/gsap.min.js"></script>
+    <style>
+@font-face{font-family:"Lora";src:url("../assets/fonts/Lora.woff2") format("woff2");font-weight:400 700;font-style:normal}
+@font-face{font-family:"Lora";src:url("../assets/fonts/Lora-Italic.woff2") format("woff2");font-weight:400 700;font-style:italic}
+@font-face{font-family:"Work Sans";src:url("../assets/fonts/WorkSans.woff2") format("woff2");font-weight:400 600;font-style:normal}
+:root{--bg:#1B1815;--text:#F7F2EA;--accent:#EBB593;--eyebrow:#E8C3A4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
+#root{position:relative;width:100%;height:100%;color:var(--text);font-family:"Lora",serif}
+.eyebrow{font-family:"Work Sans",sans-serif;font-weight:600;font-size:26px;letter-spacing:.3em;text-transform:uppercase;color:var(--eyebrow);white-space:nowrap}
+.small{font-family:"Work Sans",sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--eyebrow);font-size:21px;white-space:nowrap}
+.h{font-family:"Lora",serif;font-weight:500;color:var(--text);text-shadow:0 2px 28px rgba(27,24,21,.6);letter-spacing:-.01em}
+.line{display:block;white-space:nowrap}
+.w{display:inline-block;will-change:transform}
+.w+.w{margin-left:.26em}
+em{font-style:italic;color:var(--accent);font-weight:500}
+#blk{position:absolute;left:72px;bottom:380px;width:936px}</style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="s4" data-start="0" data-duration="2.4" data-width="1080" data-height="1920" data-fps="30">
+<div id="blk" class="clip" data-start="0" data-duration="2.4" data-track-index="0"><div class="h" id="g" style="font-size:54px;line-height:1.05"><span class="line"><span class="w" id="g0">Oficinas</span><span class="w" id="g1">privadas,</span></span><span class="line"><span class="w" id="g2">cada</span><span class="w" id="g3">una</span><span class="w" id="g4">con</span><span class="w" id="g5">acceso</span><span class="w" id="g6">propio.</span></span></div></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#g0", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.2);
+      tl.fromTo("#g1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.29);
+      tl.fromTo("#g2", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.38);
+      tl.fromTo("#g3", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.47);
+      tl.fromTo("#g4", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.56);
+      tl.fromTo("#g5", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.65);
+      tl.fromTo("#g6", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.74);
+      tl.to("#blk", { opacity: 0, y: -18, duration: 0.35, ease: "power2.in" }, 2.1);
+
+      window.__timelines["s4"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
