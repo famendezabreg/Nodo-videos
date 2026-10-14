@@ -7,7 +7,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const pub = join(root, "remotion-reel", "public");
 for (const d of ["photos", "depth", "layers", "audio", "sfx"]) mkdirSync(join(pub, d), { recursive: true });
 
-for (const f of readdirSync(join(root, "assets/images"))) cpSync(join(root, "assets/images", f), join(pub, "photos", f));
+// fotos: si existe la version preparada (tools/enhance.py) se usa esa; si no, los originales
+const photoDir = existsSync(join(root, "remotion-reel/assets-enhanced")) ? "remotion-reel/assets-enhanced" : "assets/images";
+for (const f of readdirSync(join(root, photoDir))) cpSync(join(root, photoDir, f), join(pub, "photos", f));
 for (const f of readdirSync(join(root, "remotion-reel/assets-depth")).filter((f) => f.endsWith(".png") && !f.startsWith("_"))) cpSync(join(root, "remotion-reel/assets-depth", f), join(pub, "depth", f));
 // Capas de HyperFrames como secuencias PNG RGBA (alfa fiable dentro de Remotion)
 for (const d of readdirSync(join(root, "hf-titles/renders/seq"))) if (d !== "fixed") cpSync(join(root, "hf-titles/renders/seq", d), join(pub, "layers", d), { recursive: true });

@@ -129,7 +129,7 @@ js = (f'      tl.fromTo("#logo", {{ scale: 0.96, opacity: 0 }}, {{ scale: 1, opa
 for i, at in enumerate(t["wordsAt"]):
     js += f'      tl.fromTo("#g{i}", {{ y: 56, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }}, {b(at)});\n'
 js += (f'      tl.fromTo("#btn", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.7, ease: "expo.out" }}, {b(t["buttonAt"])});\n'
-       f'      tl.fromTo("#shine", {{ xPercent: -140 }}, {{ xPercent: 340, duration: 0.8, ease: "power2.inOut" }}, {b(t["shineAt"])});\n'
+       f'      tl.fromTo("#shine", {{ x: -180 }}, {{ x: 780, duration: 1.0, ease: "power2.inOut" }}, {b(t["shineAt"])});\n'
        f'      tl.fromTo("#foot", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.7, ease: "power2.out" }}, {b(t["footerAt"])});\n')
 write("end", "end", dur, f"""
       <div id="wrap" class="clip" data-start="0" data-duration="{dur}" data-track-index="0">
@@ -155,7 +155,7 @@ write("fixed", "fixed", 0.1, """
         <div id="f3">Imágenes con fines ilustrativas.</div>
       </div>""".replace("ilustrativas", "ilustrativos"), """
 #fx{position:absolute;inset:0}
-#logo{position:absolute;left:72px;top:262px;width:150px;filter:drop-shadow(0 2px 10px rgba(27,24,21,.5))}
+#logo{position:absolute;left:50%;margin-left:-130px;top:262px;width:260px;filter:drop-shadow(0 2px 12px rgba(27,24,21,.55))}
 #f2{position:absolute;right:72px;top:1760px;font-size:21px}
 #f3{position:absolute;left:72px;top:1760px;font-family:"Work Sans",sans-serif;font-weight:400;font-size:20px;letter-spacing:.04em;color:rgba(247,242,234,.8)}
 """, "")

@@ -66,5 +66,24 @@ for i, ch in enumerate(PAGES, 1):
         cb.append([min(p[0] for p in pp), -max(p[1] for p in pp), max(p[0] for p in pp), -min(p[1] for p in pp)])  # y hacia arriba
     w = (x1 - x0) * k
     res["glyphs"][ch] = {"d": " ".join(d), "adv": w + GAP, "bounds": [lsb, -(y1 - base) * k, lsb + w, -(y0 - base) * k], "contours": cb}
+# Disposicion exacta del logo oficial (assets/logo/nodo624-logo-claro-transparente.png): cajas de cada letra, filete y cifras
+import numpy as np
+from PIL import Image
+from scipy import ndimage as ndi
+logo = Image.open(ROOT / "assets/logo/nodo624-logo-claro-transparente.png")
+lab, n = ndi.label(np.asarray(logo.getchannel("A")) > 60)
+comps = []
+for i, sl in enumerate(ndi.find_objects(lab), 1):
+    if (lab[sl] == i).sum() < 30: continue
+    comps.append([sl[1].start, sl[0].start, sl[1].stop, sl[0].stop])
+comps.sort(key=lambda c: (c[1] > 150, c[0]))   # fila 1 (NODO) y luego rule + cifras
+big = [c for c in comps if c[3] - c[1] > 100]
+rest = [c for c in comps if c[3] - c[1] <= 100]
+rule = [c for c in rest if c[3] - c[1] < 10][0]
+digits = sorted([c for c in rest if c[3] - c[1] >= 10], key=lambda c: c[0])
+res["layout"] = {"w": logo.width, "h": logo.height,
+                 "letters": [{"id": i, "ch": ch, "box": b} for i, ch, b in zip(["N", "O1", "D", "O2"], "NODO", big)],
+                 "rule": rule,
+                 "digits": [{"id": ch, "ch": ch, "box": b} for ch, b in zip("624", digits)]}
 (ROOT / "remotion-reel/src/wordmark.json").write_text(json.dumps(res))
 print({c: (round(g["adv"]), [round(b) for b in g["bounds"]], len(g["contours"])) for c, g in res["glyphs"].items()})

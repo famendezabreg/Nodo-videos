@@ -30,9 +30,9 @@ em{font-style:italic;color:var(--accent);font-weight:500}
 </style>
   </head>
   <body>
-    <div id="root" data-composition-id="end" data-start="0" data-duration="8.3333" data-width="1080" data-height="1920" data-fps="30">
+    <div id="root" data-composition-id="end" data-start="0" data-duration="5.0" data-width="1080" data-height="1920" data-fps="30">
 
-      <div id="wrap" class="clip" data-start="0" data-duration="8.3333" data-track-index="0">
+      <div id="wrap" class="clip" data-start="0" data-duration="5.0" data-track-index="0">
         <img id="logo" src="../assets/logo.png" alt="NODO 624" />
         <div id="hd" style="position:absolute;left:0;right:0;top:880px;text-align:center"><div class="h" id="g" style="font-size:104px;line-height:1.05"><span class="line"><span class="w" id="g0">Agenda</span><span class="w" id="g1">tu</span><span class="w" id="g2"><em>visita.</em></span></span></div></div>
         <div id="btn"><span id="shine"></span><span class="bt">Agenda en nodo624.com</span></div>
@@ -46,7 +46,7 @@ em{font-style:italic;color:var(--accent);font-weight:500}
       tl.fromTo("#g1", { y: 56, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.25);
       tl.fromTo("#g2", { y: 56, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.6667);
       tl.fromTo("#btn", { y: 30, opacity: 0, xPercent: -50 }, { y: 0, opacity: 1, xPercent: -50, duration: 0.7, ease: "expo.out" }, 2.5);
-      tl.fromTo("#shine", { xPercent: -140 }, { xPercent: 340, duration: 0.8, ease: "power2.inOut" }, 2.9167);
+      tl.fromTo("#shine", { x: -180 }, { x: 780, duration: 1.0, ease: "power2.inOut" }, 2.9167);
       tl.fromTo("#foot", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, 3.0);
 
       window.__timelines["end"] = tl;

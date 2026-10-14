@@ -1,5 +1,5 @@
 {
-  "_doc": "Fuente unica de tiempos del reel NODO 624 'impacto'. Todo se expresa en BEATS; remotion-reel/src/config.ts y hf-titles/tools/gen.py lo leen. Sin musica en /assets/audio => rejilla fija de 72 BPM (0.833 s, 25 frames por beat). End card de 10 beats (8.3 s) para dar tiempo de lectura a 'Agenda tu visita'.",
+  "_doc": "Fuente unica de tiempos del reel NODO 624 'impacto'. Todo se expresa en BEATS; remotion-reel/src/config.ts y hf-titles/tools/gen.py lo leen. Sin musica en /assets/audio => rejilla fija de 72 BPM (0.833 s, 25 frames por beat). End card de 6 beats (5 s) con tiempo de lectura para 'Agenda tu visita'.",
   "fps": 30,
   "bpm": 72,
   "grid": "fixed-72bpm",
@@ -34,7 +34,7 @@
     ],
     "end": [
       28,
-      38
+      34
     ]
   },
   "photos": {
