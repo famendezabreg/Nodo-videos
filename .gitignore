@@ -1,0 +1,5 @@
+node_modules/
+remotion-reel/public/
+hf-titles/renders/
+hf-titles/.hyperframes/
+.DS_Store
