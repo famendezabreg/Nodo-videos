@@ -8,11 +8,12 @@ import { cubicIO, expoOut, lerp, prog } from "./util";
 type G = { d: string; adv: number; bounds: number[]; contours: number[][] };
 const G = wm.glyphs as unknown as Record<string, G>;
 
-const F = 304;               // cuerpo del titular (px): NODO ocupa ~908 px de ancho
-const SC = F / wm.upm;
-const BASE1 = 880, BASE2 = 1190; // lineas base de NODO y 624
 const advN = G.N.adv + G.O.adv + G.D.adv;
 const inkL = G.N.bounds[0], inkR = advN + G.O.bounds[2];
+const F = (920 * wm.upm) / (inkR - inkL); // cuerpo: NODO (letras oficiales del rotulo) ocupa 920 px de ancho
+const SC = F / wm.upm;
+const CAPPX = wm.capHeight * SC;
+const BASE1 = 880, BASE2 = BASE1 + CAPPX + 70; // lineas base de NODO y 624
 const X0 = (W - (inkR - inkL) * SC) / 2 - inkL * SC;
 // 624 repartido en el mismo ancho de tinta que NODO
 const g624 = (inkR - inkL - (G["6"].bounds[2] - G["6"].bounds[0]) - (G["2"].bounds[2] - G["2"].bounds[0]) - (G["4"].bounds[2] - G["4"].bounds[0])) / 2;
@@ -59,7 +60,7 @@ const Overlay: React.FC = () => {
             const e = expoOut(prog(frame, bf(l.at), 10));
             const h = isDigit ? e : hFill * e;
             const ty = isDigit ? 0 : (1 - e) * 60;
-            return <path key={l.id} d={G[l.ch].d} fill="black" opacity={h}
+            return <path key={l.id} d={G[l.ch].d} fill="black" fillRule="evenodd" opacity={h}
               transform={`translate(${px(l.x)} ${l.base + ty}) scale(${SC})`} />;
           })}
           <path d={oDisc} fill="black" opacity={open}
@@ -70,7 +71,7 @@ const Overlay: React.FC = () => {
         <rect x={-40000} y={-40000} width={80000} height={80000} fill={COLORS.bg} mask={`url(#${mid})`} />
         {LETTERS.filter((l) => !"624".includes(l.ch)).map((l) => {
           const e = expoOut(prog(frame, bf(l.at), 10));
-          return <path key={l.id} d={G[l.ch].d} fill={COLORS.text} opacity={e * (1 - hFill)}
+          return <path key={l.id} d={G[l.ch].d} fill={COLORS.text} fillRule="evenodd" opacity={e * (1 - hFill)}
             transform={`translate(${px(l.x)} ${l.base + (1 - e) * 60}) scale(${SC})`} />;
         })}
         {LETTERS.map((l) => {
@@ -81,7 +82,7 @@ const Overlay: React.FC = () => {
             transform={`translate(${px(l.x)} ${l.base + (isDigit ? 0 : (1 - e) * 60)}) scale(${SC})`} />;
         })}
         {/* filete acento entre NODO y 624, como en el logo */}
-        <rect x={px(G.N.bounds[0])} y={(BASE1 + BASE2 - 700 * SC) / 2 + 2} width={(inkR - inkL) * SC} height={2} fill={COLORS.accent}
+        <rect x={px(G.N.bounds[0])} y={(BASE1 + BASE2 - CAPPX) / 2 + 2} width={(inkR - inkL) * SC} height={2} fill={COLORS.accent}
           opacity={0.9 * expoOut(prog(frame, bf(T.hook.digits), 8)) * fade} />
       </g>
     </svg>

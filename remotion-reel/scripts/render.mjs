@@ -17,4 +17,4 @@ if (music) {
   run(["render", "src/index.ts", "Reel", "out/nodo624_reel_impacto.mp4", "--props", JSON.stringify({ music, sfx: fx })]);
 }
 run(["render", "src/index.ts", "Reel", "out/nodo624_reel_impacto_sin_musica.mp4", "--muted", "--props", JSON.stringify({ music: null, sfx: [] })]);
-run(["still", "src/index.ts", "Reel", "out/portada.png", "--frame=44", "--props", JSON.stringify({ music: null, sfx: [] })]);
+run(["still", "src/index.ts", "Reel", "out/portada.png", "--frame=62", "--props", JSON.stringify({ music: null, sfx: [] })]);

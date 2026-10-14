@@ -6,7 +6,7 @@ CFG = json.loads((ROOT.parent / "config/timing.json").read_text())
 BEAT = 60 / CFG["bpm"]
 OUT = ROOT / "compositions"
 OUT.mkdir(exist_ok=True)
-b = lambda x: round(x * BEAT, 3)
+b = lambda x: round(x * BEAT, 4)
 
 CSS = """
 @font-face{font-family:"Lora";src:url("../assets/fonts/Lora.woff2") format("woff2");font-weight:400 700;font-style:normal}
@@ -71,7 +71,7 @@ def out(sel, at, d=0.3):
 
 def scene_dur(sid):
     a, z = CFG["scenes"][sid]
-    return round((z - a) * BEAT, 3)
+    return round((z - a) * BEAT, 4)
 
 BLOCK = "#blk{position:absolute;left:72px;bottom:%dpx;width:936px}"
 def write(name, cid, dur, body, css, js):

@@ -22,19 +22,19 @@ em{font-style:italic;color:var(--accent);font-weight:500}
 #p1,#p2{position:absolute;left:72px;bottom:380px;width:936px}</style>
   </head>
   <body>
-    <div id="root" data-composition-id="s3" data-start="0" data-duration="2.4" data-width="1080" data-height="1920" data-fps="30">
+    <div id="root" data-composition-id="s3" data-start="0" data-duration="3.3333" data-width="1080" data-height="1920" data-fps="30">
 
-      <div id="p1" class="clip" data-start="0" data-duration="2.4" data-track-index="0"><div class="h" id="a" style="font-size:196px;line-height:1.05"><span class="line"><span class="w" id="a0">Tu</span></span><span class="line"><span class="w" id="a1">puerta.</span></span></div></div>
-      <div id="p2" class="clip" data-start="0" data-duration="2.4" data-track-index="1"><div class="h" id="b" style="font-size:196px;line-height:1.05"><span class="line"><span class="w" id="b0">Tu</span></span><span class="line"><span class="w" id="b1"><em>espacio.</em></span></span></div></div>
+      <div id="p1" class="clip" data-start="0" data-duration="3.3333" data-track-index="0"><div class="h" id="a" style="font-size:196px;line-height:1.05"><span class="line"><span class="w" id="a0">Tu</span></span><span class="line"><span class="w" id="a1">puerta.</span></span></div></div>
+      <div id="p2" class="clip" data-start="0" data-duration="3.3333" data-track-index="1"><div class="h" id="b" style="font-size:196px;line-height:1.05"><span class="line"><span class="w" id="b0">Tu</span></span><span class="line"><span class="w" id="b1"><em>espacio.</em></span></span></div></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#a0", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 0.6);
-      tl.fromTo("#a1", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 0.75);
-      tl.to("#p1", { opacity: 0, y: -18, duration: 0.2, ease: "power2.in" }, 1.02);
-      tl.fromTo("#b0", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.2);
-      tl.fromTo("#b1", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.35);
-      tl.to("#p2", { opacity: 0, y: -18, duration: 0.35, ease: "power2.in" }, 2.1);
+      tl.fromTo("#a0", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 0.8333);
+      tl.fromTo("#a1", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.0417);
+      tl.to("#p1", { opacity: 0, y: -18, duration: 0.2, ease: "power2.in" }, 1.4167);
+      tl.fromTo("#b0", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.6667);
+      tl.fromTo("#b1", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.875);
+      tl.to("#p2", { opacity: 0, y: -18, duration: 0.35, ease: "power2.in" }, 2.9167);
 
       window.__timelines["s3"] = tl;
       tl.seek(0);

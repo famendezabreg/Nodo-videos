@@ -22,9 +22,9 @@ em{font-style:italic;color:var(--accent);font-weight:500}
 #blk{position:absolute;left:72px;bottom:380px;width:936px}#rule{width:72px;height:2px;background:var(--accent);margin:24px 0 28px;transform-origin:left}#eb{font-size:24px}</style>
   </head>
   <body>
-    <div id="root" data-composition-id="s1" data-start="0" data-duration="2.4" data-width="1080" data-height="1920" data-fps="30">
+    <div id="root" data-composition-id="s1" data-start="0" data-duration="3.3333" data-width="1080" data-height="1920" data-fps="30">
 
-      <div id="blk" class="clip" data-start="0" data-duration="2.4" data-track-index="0">
+      <div id="blk" class="clip" data-start="0" data-duration="3.3333" data-track-index="0">
         <div class="eyebrow" id="eb">Colonia Escalón · San Salvador</div>
         <div id="rule"></div>
         <div class="h" id="g" style="font-size:124px;line-height:1.05"><span class="line"><span class="w" id="g0">Más</span><span class="w" id="g1">que</span><span class="w" id="g2">un</span></span><span class="line"><span class="w" id="g3"><em>espacio.</em></span></span></div>
@@ -32,13 +32,13 @@ em{font-style:italic;color:var(--accent);font-weight:500}
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#eb", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "expo.out" }, 0.3);
-      tl.fromTo("#rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 0.48);
-      tl.fromTo("#g0", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 0.6);
-      tl.fromTo("#g1", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 0.75);
-      tl.fromTo("#g2", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 0.9);
-      tl.fromTo("#g3", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.05);
-      tl.to("#blk", { opacity: 0, y: -18, duration: 0.35, ease: "power2.in" }, 2.1);
+      tl.fromTo("#eb", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "expo.out" }, 0.4167);
+      tl.fromTo("#rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 0.6667);
+      tl.fromTo("#g0", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 0.8333);
+      tl.fromTo("#g1", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.0417);
+      tl.fromTo("#g2", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.25);
+      tl.fromTo("#g3", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, 1.4583);
+      tl.to("#blk", { opacity: 0, y: -18, duration: 0.35, ease: "power2.in" }, 2.9167);
 
       window.__timelines["s1"] = tl;
       tl.seek(0);
